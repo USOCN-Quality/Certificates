@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.11.4/css/dataTables.semanticui.min.css"/>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.4/semantic.min.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fomantic-ui/2.8.8/semantic.min.css"/>
+    <link rel="stylesheet" href="./styles.css">
+    
+<body>
+ <div class="container">
+     <h1>Certificates</h1><hr>
+     <h2>Select a Batch ID</h2>
+     <div class="ui selection dropdown BatchDropdownSelect">
+        <input type="hidden" name="Batches">
+        <i class="dropdown icon"></i>
+        <div class="default text">Select a Batch</div>
+        <div id="BatchDropdown" class="menu">
+        </div>
+      </div>
+ </div>
+</body>
+<!-- Semantic/bootstrap/jquery scripts -->
+<script type="text/javascript" language="javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
+<!-- Custom scripts -->
+<script src="./UIfunctions.js"></script>
+<script src="./Datafunctions.js"></script>
+<script src="./Request.js"></script>
+<script>
+    //call function to populate the initial batch dropwdown
+    populateBatchList();
+</script>
+</html>
