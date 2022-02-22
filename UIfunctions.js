@@ -6,10 +6,10 @@ $('.ui.dropdown')
 var populateBatchList = function(){
     var items;
   getBatches("", function(data){
-      items = removeDuplicates("Batch",data)
+      items = removeBatchDuplicates(data)
   })
   items.forEach(item=>{
-    var batchItem = `<div class="item batchSelectItem" data-value="${item}">${item}</div>`
+    var batchItem = `<div class="item batchSelectItem" data-value="${item.Batch}">${item.Batch} | ${item.Created.replace("T"," ").replace("Z"," ")}| ${item.Operator} </div>`
     $("#BatchDropdown").append(batchItem)
   })
 }
@@ -24,13 +24,16 @@ generateTableFromBatch(selected)
 //function to make table once batch ID is selected
 var generateTableFromBatch = function(batchID){
     var items;
+    var tableData ={
+
+    }
   getInfo(`(Batch eq '${batchID}')`, function(data){
       items = data
   })
   items.forEach(item =>{
       var results = JSON.parse(item.Result)
-      results.SN= item.Title
-      console.log(results)
+      results = Object.assign({SN: item.Title}, results)
+      console.log(returnHeaders(results))
   })
 }
 
