@@ -22,6 +22,7 @@ generateTableFromBatch(selected)
 });
 
 //function to make table once batch ID is selected
+//this function gets the headers and body for the table and sends the info to datatables
 var generateTableFromBatch = function(batchID){
     var items;
     var tableData ={
@@ -30,11 +31,22 @@ var generateTableFromBatch = function(batchID){
   getInfo(`(Batch eq '${batchID}')`, function(data){
       items = data
   })
+  //log headers of results
+  var resultHeaderObject = JSON.parse(items[0].Result)
+  resultHeaderObject = returnHeaders(resultHeaderObject)
+ 
+  //get json of columns for data tables
+  var resultsArray = []
   items.forEach(item =>{
       var results = JSON.parse(item.Result)
-      results = Object.assign({SN: item.Title}, results)
-      console.log(returnHeaders(results))
+      results = Object.assign({"Serial Number": item.Title}, results)
+      resultsArray.push(results)
   })
+  // console.log(dtObject)
+  $('#listData').DataTable({
+    data : resultsArray,
+    columns : resultHeaderObject,
+ })
 }
 
 

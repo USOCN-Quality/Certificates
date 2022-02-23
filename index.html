@@ -9,8 +9,9 @@
     <link rel="stylesheet" href="https://cdn.datatables.net/1.11.4/css/dataTables.semanticui.min.css"/>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.4/semantic.min.css" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fomantic-ui/2.8.8/semantic.min.css"/>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.11.4/css/jquery.dataTables.min.css">
     <link rel="stylesheet" href="./styles.css">
-    </head>
+   </head>
     
 <body>
  <div class="container">
@@ -26,7 +27,7 @@
                </div>
              </div>
         </div>
-        <div class="eight wide column">
+        <div class="sixteen wide column">
             <table id="listData"></table>
 
         </div>
@@ -37,10 +38,11 @@
 <!-- Semantic/bootstrap/jquery scripts -->
 <script type="text/javascript" language="javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.21/js/jquery.dataTables.min.js" integrity="sha512-BkpSL20WETFylMrcirBahHfSnY++H2O1W+UnEEO4yNIl+jI2+zowyoGJpbtk6bx97fBXf++WJHSSK2MV4ghPcg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <!-- Custom scripts -->
-<script src="./UIfunctions.js"></script>
-<script src="./Datafunctions.js"></script>
-<script src="./Request.js"></script>
+<script src="./JS/UIfunctions.js"></script>
+<script src="./JS/Datafunctions.js"></script>
+<script src="./JS/Request.js"></script>
 <script>
     //call function to populate the initial batch dropwdown
     populateBatchList();

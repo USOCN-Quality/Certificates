@@ -31,8 +31,9 @@ var returnSpecifiedKeyArray = function(key, array){
 //return headers of JSON for dataTables formatting
 var returnHeaders = jsonObj => {
     var headerArray = []
+    headerArray.push({"data": "Serial Number", "title": "Serial Number"})
     for(var key in jsonObj){
-        headerArray.push({ data : key.toString()})
+        headerArray.push({ "data" : key.toString(), "title": key.toString()})
     }
     return (headerArray)
 }
