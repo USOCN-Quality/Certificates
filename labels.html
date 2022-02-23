@@ -11,24 +11,100 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.4/semantic.min.css" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fomantic-ui/2.8.8/semantic.min.css"/>
     <style>
-        .bigBox{
-            height: 180px;
-            width: 720px;
-            border: 2px solid black;
+        body{
+            padding: 7px;
+        }
+        .main{
+            max-height: 180px !important;
+            max-width: 720px !important;
+            height: 180px !important;
+            width: 720px !important;
+        }
+        .row{
+            height: 45px;
+        }
+        .col-md-1, .col-md-3, .col-md-11{
+            border: 1px solid black;
+            border-bottom: 0px;
+        }
+        .column{            
+            padding: 10px !important;
+        }
+        .vertical{
+            position: relative;
+            top: 100px;
+            -webkit-transform: rotate(270deg);
+            -moz-transform: rotate(270deg);
+            -o-transform: rotate(270deg);
+            transform: rotate(270deg);
+        }
+        .tableText{
+            font-size: 12pt;
+        }
+        .alignRight{
+            text-align: right;
+        }
+        .container-fluid, .row{
+            padding: 0px;
         }
     </style>
 </head>
 <body>
- <div class="container">
-     <h1>Labels</h1><hr>
-     <div class="bigBox">
-        
-      </div>
- </div>
+    <div class="main">
+        <div class="row">
+            <div class="col-md-1"><h3 class="vertical">Calibration</h3></div>
+        <div class="col-md-11">
+            <div class="row text-center"><h3>Length Bar Artefact</h3></div>
+            <div class="row">
+                <div class="col-md-3"><p class="tableText">Serial No.</p></div>
+                <div class="col-md-3"><p class="tableText">######</p></div>
+                <div class="col-md-3"><p class="tableText">L1-2 (mm)</p></div>
+                <div class="col-md-3"><p class="tableText">######</p></div>
+            </div>
+            <div class="row">
+                <div class="col-md-3"><p class="tableText">Serial No.</p></div>
+                <div class="col-md-3"><p class="tableText">######</p></div>
+                <div class="col-md-3"><p class="tableText">L1-2 (mm)</p></div>
+                <div class="col-md-3"><p class="tableText">######</p></div>
+            </div>
+            <div class="row text-center"><h3>See certificate for details</h3></div>
+        </div>
+    </div>
+</div>
+<!-- <div class="ui grid main">
+    <div class="one wide column text-center">
+<h3 class="vertical">Calibration</h3>
+    </div>
+        <div class="fifteen wide column">
+            <div class="row ui grid ">
+                <div class="sixteen column wide text-center">
+                    <h3 class="">Length Bar Artefact</h3>
+                </div>
+            </div>
+            <div class="row ui grid ">
+                <div class="four wide column alignRight"><p class="tableText">Serial No.</p></div>
+                <div class="four wide column"><p class="tableText">######</p></div>
+                <div class="four wide column alignRight"><p class="tableText">L1-2 (mm)</p></div>
+                <div class="four wide column"><p class="tableText">######</p></div>
+            </div>
+            <div class="row ui grid ">
+                <div class="four wide column alignRight"><p class="tableText">Cal Date</p></div>
+                <div class="four wide column"><p class="tableText">######</p></div>
+                <div class="four wide column alignRight"><p class="tableText">L1-3 (mm)</p></div>
+                <div class="four wide column"><p class="tableText">######</p></div>
+            </div>
+            <div class="row ui grid text-center">
+                <div class="sixteen column wide">
+                    <h3>See certificate for details</h3>
+                </div>
+            </div>
+        </div>
+    </div> -->
 </body>
 <!-- Semantic/bootstrap/jquery scripts -->
 <script type="text/javascript" language="javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sp-pnp-js/3.0.10/pnp.min.js" integrity="sha512-rTs1HrkgsiOFb/ZjZg7ILVV3dDZMTWUzexaKR7/tqrajhO1R8dckfHpQ7srJSpnQlDxzp5ybwD2Kmk2e33CD2A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <!-- Custom scripts -->
 
 </html>
