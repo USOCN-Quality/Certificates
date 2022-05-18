@@ -41,7 +41,7 @@ var generateTableFromBatch = function(batchID){
   var resultsArray = []
   items.forEach(item =>{
       var results = JSON.parse(item.Result)
-      results = Object.assign({"Serial Number": item.Title}, results)
+      results = Object.assign({"Serial Number": `<a href="./Cert.html?sn=${item.Title}">${item.Title}</a>`}, results)
       resultsArray.push(results)
   })
   

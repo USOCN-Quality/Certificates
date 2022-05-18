@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brother Printer Test</title>
+    <!-- CSS links and stylesheets -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.11.4/css/dataTables.semanticui.min.css"/>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.4/semantic.min.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fomantic-ui/2.8.8/semantic.min.css"/>
+   </head>
+<body>
+    <div class="row">
+        <div class="col-md-6">
+            <h1 id="serialNumber">Cert Details</h1>
+    <img style="max-width: 400px;" class="img-fluid" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Hexagon_logo.svg/1598px-Hexagon_logo.svg.png?20180213093917" alt="Hexagon Logo">
+    <div class="showData">
+
+    </div>
+        </div>
+    </div>
+</body>
+<!-- Semantic/bootstrap/jquery scripts -->
+<script type="text/javascript" language="javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sp-pnp-js/3.0.10/pnp.min.js" integrity="sha512-rTs1HrkgsiOFb/ZjZg7ILVV3dDZMTWUzexaKR7/tqrajhO1R8dckfHpQ7srJSpnQlDxzp5ybwD2Kmk2e33CD2A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<!-- Custom scripts -->
+<script src="./JS/UIfunctions.js"></script>
+<script src="./JS/Datafunctions.js"></script>
+<script src="./JS/Request.js"></script>
+<script>
+    var items,overallJSON;
+    var url = new URL(window.location.href);
+    var sn = url.searchParams.get("sn");
+    getInfo(`(Title eq '${sn}')`, function(data){
+      items = JSON.parse(data[0].Result)
+      overallJSON = data[0]
+  })
+  
+  $('#serialNumber').empty()
+    $('#serialNumber').append(`${overallJSON.Title} Cert Details`)
+  $(".showData").append(`<p>Serial Number: ${overallJSON.Title}</p>`)
+  for (var item in items){
+      var show = `<p>${item}: ${items[item]}</p>`
+        $(".showData").append(show)
+  }
+  console.log(overallJSON)
+    </script>
+</html>
