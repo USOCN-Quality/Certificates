@@ -24,6 +24,8 @@ generateTableFromBatch(selected)
 //function to make table once batch ID is selected
 //this function gets the headers and body for the table and sends the info to datatables
 var generateTableFromBatch = function(batchID){
+  //clear data table in case of reselection
+  
     var items;
     var tableData ={
 
@@ -42,8 +44,14 @@ var generateTableFromBatch = function(batchID){
       results = Object.assign({"Serial Number": item.Title}, results)
       resultsArray.push(results)
   })
-  // console.log(dtObject)
-  $('#listData').DataTable({
+  
+// if list data exists as table destroy and reinitialize, else just initialize
+ if ( $.fn.dataTable.isDataTable( '#listData' ) ) {
+  table = $('#listData').DataTable()
+  table.destroy();
+  $("#listData").empty()
+}
+  table = $('#listData').DataTable({
     data : resultsArray,
     columns : resultHeaderObject,
  })
