@@ -23,6 +23,8 @@ var getToken =  function(){
       token = tempToken
     }); 
 }
+    //get and set initial token
+    getToken();
 var getInfo = function(stringParams,sendData){
     $.ajax({
         async:false,
