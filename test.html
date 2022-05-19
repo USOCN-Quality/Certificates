@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+  
+</body>
+
+<!-- Semantic/bootstrap/jquery scripts -->
+<script type="text/javascript" language="javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sp-pnp-js/3.0.10/pnp.min.js" integrity="sha512-rTs1HrkgsiOFb/ZjZg7ILVV3dDZMTWUzexaKR7/tqrajhO1R8dckfHpQ7srJSpnQlDxzp5ybwD2Kmk2e33CD2A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<!-- Custom scripts -->
+<script src="./JS/UIfunctions.js"></script>
+<script src="./JS/Datafunctions.js"></script>
+<script src="./JS/Request.js"></script>
+<script>
+ var form = new FormData();
+form.append("grant_type", "client_credentials");
+form.append("resource", "00000003-0000-0ff1-ce00-000000000000/hexmet.sharepoint.com@1b16ab3e-b8f6-4fe3-9f3e-2db7fe549f6a");
+form.append("client_id", "d39497c7-e332-4a26-ae10-f0bc0ebe906d@1b16ab3e-b8f6-4fe3-9f3e-2db7fe549f6a");
+form.append("client_secret", "l9dAl/DZWb7JE+a7yW+plnDRaeHuNSTtymFWfRl7X2Q=");
+
+var settings = {
+  "url": "https://accounts.accesscontrol.windows.net/1b16ab3e-b8f6-4fe3-9f3e-2db7fe549f6a/tokens/OAuth/2",
+  "method": "POST",
+  "timeout": 0,
+  "processData": false,
+  "mimeType": "multipart/form-data",
+  "contentType": false,
+  "data": form
+};
+
+$.ajax(settings).done(function (response) {
+  console.log(response);
+});
+</script>
+</html>
